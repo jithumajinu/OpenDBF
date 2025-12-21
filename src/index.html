@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DBF Editor</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>DBF Editor</h1>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <h3>Tables</h3>
+            <ul class="table-list" id="tableList">
+                <li>Loading tables...</li>
+            </ul>
+        </div>
+        <div class="editor">
+            <div class="toolbar">
+                <button class="btn" onclick="executeQuery()">Execute</button>
+                <button class="btn" onclick="clearEditor()">Clear</button>
+            </div>
+            <textarea class="sql-input" placeholder="Enter your SQL query here..." id="sqlInput">SELECT * FROM </textarea>
+            <div id="qhint" style="padding: 5px 10px; font-size: 12px; color: #666; background: #f8f9fa; border-bottom: 1px solid #e2e8f0;">
+                Try: SELECT * FROM users | DESCRIBE users
+            </div>
+            <div class="resizer" id="resizer"></div>
+            <div class="results" id="results">
+                <p style="padding: 20px; color: #666;">Results will appear here...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

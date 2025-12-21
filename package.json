@@ -1,0 +1,12 @@
+{
+  "name": "sql-editor-template",
+  "version": "1.0.0",
+  "description": "Node-based static SQL editor template",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "node-dbf": "^0.4.0"
+  }
+}
