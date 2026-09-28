@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" class="size-6">
+  <!-- Book Icon -->
+  <path stroke-linecap="round" stroke-linejoin="round" d="M7 6h14a2 2 0 0 1 2 2v16a1 1 0 0 1-1 1H7a2 2 0 0 0-2 2v-20a2 2 0 0 1 2-2Z" />
+  <path stroke-linecap="round" stroke-linejoin="round" d="M23 7v17" />
+
+  <!-- Plus Icon (Top-Right Corner) -->
+  <circle cx="24" cy="8" r="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path stroke-linecap="round" stroke-linejoin="round" d="M24 6v4m2-2h-4" />
+</svg>

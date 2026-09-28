@@ -1,0 +1,2595 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Spring Doc",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:1007",
+      "description": "local"
+    }
+  ],
+  "paths": {
+    "/api/core/master/priority/{priorityId}": {
+      "get": {
+        "tags": [
+          "Master"
+        ],
+        "summary": "Get priority by id",
+        "description": "getPriorityById",
+        "operationId": "getPriorityById",
+        "parameters": [
+          {
+            "name": "priorityId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Master"
+        ],
+        "summary": "Update priority",
+        "description": "updatePriority",
+        "operationId": "updatePriority",
+        "parameters": [
+          {
+            "name": "priorityId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePriorityRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Master"
+        ],
+        "summary": "Delete priority",
+        "description": "deletePriority",
+        "operationId": "deletePriority",
+        "parameters": [
+          {
+            "name": "priorityId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      }
+    },
+    "/api/core/master/party-type/{partyTypeId}": {
+      "get": {
+        "tags": [
+          "Master"
+        ],
+        "summary": "Get party type by id",
+        "description": "getPartyTypeById",
+        "operationId": "getPartyTypeById",
+        "parameters": [
+          {
+            "name": "partyTypeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Master"
+        ],
+        "summary": "Update party type",
+        "description": "updatePartyType",
+        "operationId": "updatePartyType",
+        "parameters": [
+          {
+            "name": "partyTypeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePartyTypeRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Master"
+        ],
+        "summary": "Delete party type",
+        "description": "deletePartyType",
+        "operationId": "deletePartyType",
+        "parameters": [
+          {
+            "name": "partyTypeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      }
+    },
+    "/api/core/master/hearing-outcome/{outcomeId}": {
+      "get": {
+        "tags": [
+          "Master"
+        ],
+        "summary": "Get hearing outcome by id",
+        "description": "getHearingOutcomeById",
+        "operationId": "getHearingOutcomeById",
+        "parameters": [
+          {
+            "name": "outcomeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Master"
+        ],
+        "summary": "Update hearing outcome",
+        "description": "updateHearingOutcome",
+        "operationId": "updateHearingOutcome",
+        "parameters": [
+          {
+            "name": "outcomeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateHearingOutcomeRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Master"
+        ],
+        "summary": "Delete hearing outcome",
+        "description": "deleteHearingOutcome",
+        "operationId": "deleteHearingOutcome",
+        "parameters": [
+          {
+            "name": "outcomeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      }
+    },
+    "/api/core/master/document-type/{docTypeId}": {
+      "get": {
+        "tags": [
+          "Master"
+        ],
+        "summary": "Get document type by id",
+        "description": "getDocumentTypeById",
+        "operationId": "getDocumentTypeById",
+        "parameters": [
+          {
+            "name": "docTypeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Master"
+        ],
+        "summary": "Update document type",
+        "description": "updateDocumentType",
+        "operationId": "updateDocumentType",
+        "parameters": [
+          {
+            "name": "docTypeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateDocumentTypeRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Master"
+        ],
+        "summary": "Delete document type",
+        "description": "deleteDocumentType",
+        "operationId": "deleteDocumentType",
+        "parameters": [
+          {
+            "name": "docTypeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      }
+    },
+    "/api/core/master/court/{courtId}": {
+      "get": {
+        "tags": [
+          "Master"
+        ],
+        "summary": "Get court by id",
+        "description": "getCourtById",
+        "operationId": "getCourtById",
+        "parameters": [
+          {
+            "name": "courtId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Master"
+        ],
+        "summary": "Update court",
+        "description": "updateCourt",
+        "operationId": "updateCourt",
+        "parameters": [
+          {
+            "name": "courtId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCourtRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Master"
+        ],
+        "summary": "Delete court",
+        "description": "deleteCourt",
+        "operationId": "deleteCourt",
+        "parameters": [
+          {
+            "name": "courtId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      }
+    },
+    "/api/core/master/case-type/{caseTypeId}": {
+      "get": {
+        "tags": [
+          "Master"
+        ],
+        "summary": "Get case type by id",
+        "description": "getCaseTypeById",
+        "operationId": "getCaseTypeById",
+        "parameters": [
+          {
+            "name": "caseTypeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Master"
+        ],
+        "summary": "Update case type",
+        "description": "updateCaseType",
+        "operationId": "updateCaseType",
+        "parameters": [
+          {
+            "name": "caseTypeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCaseTypeRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Master"
+        ],
+        "summary": "Delete case type",
+        "description": "deleteCaseType",
+        "operationId": "deleteCaseType",
+        "parameters": [
+          {
+            "name": "caseTypeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      }
+    },
+    "/api/core/master/case-status/{statusId}": {
+      "get": {
+        "tags": [
+          "Master"
+        ],
+        "summary": "Get case status by id",
+        "description": "getCaseStatusById",
+        "operationId": "getCaseStatusById",
+        "parameters": [
+          {
+            "name": "statusId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Master"
+        ],
+        "summary": "Update case status",
+        "description": "updateCaseStatus",
+        "operationId": "updateCaseStatus",
+        "parameters": [
+          {
+            "name": "statusId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCaseStatusRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Master"
+        ],
+        "summary": "Delete case status",
+        "description": "deleteCaseStatus",
+        "operationId": "deleteCaseStatus",
+        "parameters": [
+          {
+            "name": "statusId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      }
+    },
+    "/api/contact/{contactId}": {
+      "get": {
+        "tags": [
+          "Contact"
+        ],
+        "summary": "Get contact by ID",
+        "description": "Get contact by ID",
+        "operationId": "getContactById",
+        "parameters": [
+          {
+            "name": "contactId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Contact"
+        ],
+        "summary": "Update an existing Contact",
+        "description": "Update an existing Contact",
+        "operationId": "updateContactById",
+        "parameters": [
+          {
+            "name": "contactId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateContactRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Contact"
+        ],
+        "summary": "Delete contact by ID",
+        "description": "Delete contact by ID",
+        "operationId": "deleteContactById",
+        "parameters": [
+          {
+            "name": "contactId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      }
+    },
+    "/api/openApis/send": {
+      "post": {
+        "tags": [
+          "Notification"
+        ],
+        "summary": "Notification",
+        "description": "Notification",
+        "operationId": "Notification",
+        "parameters": [
+          {
+            "name": "to",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "subject",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "message",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "EMAIL",
+                "SMS",
+                "PUSH",
+                "SLACK"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        }
+      }
+    },
+    "/api/core/master/priority": {
+      "get": {
+        "tags": [
+          "Master"
+        ],
+        "summary": "Get priority page",
+        "description": "getPriorityPaged",
+        "operationId": "getPriorityPaged",
+        "parameters": [
+          {
+            "name": "request",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/MasterPagedRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ApiResponse"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Master"
+        ],
+        "summary": "Create priority",
+        "description": "createPriority",
+        "operationId": "createPriority",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePriorityRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      }
+    },
+    "/api/core/master/party-type": {
+      "get": {
+        "tags": [
+          "Master"
+        ],
+        "summary": "Get party type page",
+        "description": "getPartyTypePaged",
+        "operationId": "getPartyTypePaged",
+        "parameters": [
+          {
+            "name": "request",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/MasterPagedRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ApiResponse"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Master"
+        ],
+        "summary": "Create party type",
+        "description": "createPartyType",
+        "operationId": "createPartyType",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePartyTypeRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      }
+    },
+    "/api/core/master/hearing-outcome": {
+      "get": {
+        "tags": [
+          "Master"
+        ],
+        "summary": "Get hearing outcome page",
+        "description": "getHearingOutcomePaged",
+        "operationId": "getHearingOutcomePaged",
+        "parameters": [
+          {
+            "name": "request",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/MasterPagedRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ApiResponse"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Master"
+        ],
+        "summary": "Create hearing outcome",
+        "description": "createHearingOutcome",
+        "operationId": "createHearingOutcome",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateHearingOutcomeRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      }
+    },
+    "/api/core/master/document-type": {
+      "get": {
+        "tags": [
+          "Master"
+        ],
+        "summary": "Get document type page",
+        "description": "getDocumentTypePaged",
+        "operationId": "getDocumentTypePaged",
+        "parameters": [
+          {
+            "name": "request",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/MasterPagedRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ApiResponse"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Master"
+        ],
+        "summary": "Create document type",
+        "description": "createDocumentType",
+        "operationId": "createDocumentType",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateDocumentTypeRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      }
+    },
+    "/api/core/master/court": {
+      "get": {
+        "tags": [
+          "Master"
+        ],
+        "summary": "Get court page",
+        "description": "getCourtPaged",
+        "operationId": "getCourtPaged",
+        "parameters": [
+          {
+            "name": "request",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/MasterPagedRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ApiResponse"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Master"
+        ],
+        "summary": "Create court",
+        "description": "createCourt",
+        "operationId": "createCourt",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCourtRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      }
+    },
+    "/api/core/master/case-type": {
+      "get": {
+        "tags": [
+          "Master"
+        ],
+        "summary": "Get case type page",
+        "description": "getCaseTypePaged",
+        "operationId": "getCaseTypePaged",
+        "parameters": [
+          {
+            "name": "request",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/MasterPagedRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ApiResponse"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Master"
+        ],
+        "summary": "Create case type",
+        "description": "createCaseType",
+        "operationId": "createCaseType",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCaseTypeRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      }
+    },
+    "/api/core/master/case-status": {
+      "get": {
+        "tags": [
+          "Master"
+        ],
+        "summary": "Get case status page",
+        "description": "getCaseStatusPaged",
+        "operationId": "getCaseStatusPaged",
+        "parameters": [
+          {
+            "name": "request",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/MasterPagedRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ApiResponse"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Master"
+        ],
+        "summary": "Create case status",
+        "description": "createCaseStatus",
+        "operationId": "createCaseStatus",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCaseStatusRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      }
+    },
+    "/api/contact": {
+      "get": {
+        "tags": [
+          "Contact"
+        ],
+        "summary": "Contact list Paged",
+        "description": "Contact list Paged",
+        "operationId": "ContactListPaged",
+        "parameters": [
+          {
+            "name": "contactSearchRequest",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/ContactSearchRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ApiResponse"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Contact"
+        ],
+        "summary": "Create New Contact",
+        "description": "createContact",
+        "operationId": "createContact",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateContactRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/unauthorizedStatus"
+          },
+          "500": {
+            "$ref": "#/components/responses/internalServerErrorStatus"
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      }
+    },
+    "/api/auth/signup": {
+      "post": {
+        "tags": [
+          "auth-controller"
+        ],
+        "operationId": "registerUser",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SignUpRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/auth/refresh": {
+      "post": {
+        "tags": [
+          "auth-controller"
+        ],
+        "operationId": "refreshToken",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseJwtAuthenticationResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/auth/login": {
+      "post": {
+        "tags": [
+          "auth-controller"
+        ],
+        "operationId": "loginUser",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseJwtAuthenticationResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/cache": {
+      "get": {
+        "tags": [
+          "cache-controller"
+        ],
+        "operationId": "getAllCacheNames",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "uniqueItems": true,
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "cache-controller"
+        ],
+        "operationId": "clearAllCaches",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      }
+    },
+    "/admin/cache/{cacheName}": {
+      "get": {
+        "tags": [
+          "cache-controller"
+        ],
+        "operationId": "getCacheEntries",
+        "parameters": [
+          {
+            "name": "cacheName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "cache-controller"
+        ],
+        "operationId": "clearCache",
+        "parameters": [
+          {
+            "name": "cacheName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer Authentication": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ApiError": {
+        "type": "object",
+        "properties": {
+          "errorCode": {
+            "type": "string",
+            "enum": [
+              "INPUT_ERROR",
+              "PERMISSION_ERROR",
+              "VALIDATION_ERROR",
+              "SYSTEM_ERROR",
+              "NOT_FOUND",
+              "UNAUTHORIZED",
+              "ACCESS_DENIED",
+              "GENERAL_ERROR"
+            ]
+          },
+          "message": {
+            "type": "string"
+          },
+          "errors": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ErrorDetail"
+            }
+          },
+          "errorsAsList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ErrorDetail"
+            }
+          }
+        }
+      },
+      "ApiResponse": {
+        "type": "object",
+        "properties": {
+          "flag": {
+            "type": "boolean"
+          },
+          "data": {
+            "type": "object"
+          },
+          "error": {
+            "$ref": "#/components/schemas/ApiError"
+          },
+          "hasError": {
+            "type": "boolean"
+          },
+          "hasData": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ErrorDetail": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "CreatePriorityRequest": {
+        "required": [
+          "priorityCode",
+          "priorityName",
+          "sortOrder"
+        ],
+        "type": "object",
+        "properties": {
+          "priorityCode": {
+            "type": "string"
+          },
+          "priorityName": {
+            "type": "string"
+          },
+          "sortOrder": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "CreatePartyTypeRequest": {
+        "required": [
+          "partyTypeCode",
+          "partyTypeName"
+        ],
+        "type": "object",
+        "properties": {
+          "partyTypeCode": {
+            "type": "string"
+          },
+          "partyTypeName": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateHearingOutcomeRequest": {
+        "required": [
+          "outcomeCode",
+          "outcomeName"
+        ],
+        "type": "object",
+        "properties": {
+          "outcomeCode": {
+            "type": "string"
+          },
+          "outcomeName": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateDocumentTypeRequest": {
+        "required": [
+          "docTypeCode",
+          "docTypeName"
+        ],
+        "type": "object",
+        "properties": {
+          "docTypeCode": {
+            "type": "string"
+          },
+          "docTypeName": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateCourtRequest": {
+        "required": [
+          "active",
+          "country",
+          "courtCode",
+          "courtLevel",
+          "courtName"
+        ],
+        "type": "object",
+        "properties": {
+          "courtCode": {
+            "type": "string"
+          },
+          "courtName": {
+            "type": "string"
+          },
+          "courtLevel": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "active": {
+            "type": "boolean"
+          }
+        }
+      },
+      "CreateCaseTypeRequest": {
+        "required": [
+          "active",
+          "caseTypeCode",
+          "caseTypeName"
+        ],
+        "type": "object",
+        "properties": {
+          "caseTypeCode": {
+            "type": "string"
+          },
+          "caseTypeName": {
+            "type": "string"
+          },
+          "active": {
+            "type": "boolean"
+          }
+        }
+      },
+      "CreateCaseStatusRequest": {
+        "required": [
+          "sortOrder",
+          "statusCode",
+          "statusName",
+          "terminal"
+        ],
+        "type": "object",
+        "properties": {
+          "statusCode": {
+            "type": "string"
+          },
+          "statusName": {
+            "type": "string"
+          },
+          "terminal": {
+            "type": "boolean"
+          },
+          "sortOrder": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "AddressDto": {
+        "type": "object",
+        "properties": {
+          "addressId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "city": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "countryCode": {
+            "type": "string"
+          },
+          "lang": {
+            "type": "string"
+          },
+          "other": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "street": {
+            "type": "string"
+          },
+          "zip": {
+            "type": "string"
+          },
+          "stateCode": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateContactRequest": {
+        "required": [
+          "email1",
+          "firstName",
+          "lastName",
+          "tenantId"
+        ],
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "maxLength": 100,
+            "minLength": 2,
+            "type": "string"
+          },
+          "lastName": {
+            "maxLength": 500,
+            "minLength": 3,
+            "type": "string"
+          },
+          "companyName": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string"
+          },
+          "jobTitle": {
+            "type": "string"
+          },
+          "department": {
+            "type": "string"
+          },
+          "email1": {
+            "type": "string"
+          },
+          "email2": {
+            "type": "string"
+          },
+          "phone1": {
+            "type": "string"
+          },
+          "phone2": {
+            "type": "string"
+          },
+          "website1": {
+            "type": "string"
+          },
+          "website2": {
+            "type": "string"
+          },
+          "address1": {
+            "$ref": "#/components/schemas/AddressDto"
+          },
+          "address2": {
+            "$ref": "#/components/schemas/AddressDto"
+          },
+          "archived": {
+            "type": "string"
+          },
+          "tenantId": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "SignUpRequest": {
+        "required": [
+          "email",
+          "name",
+          "password",
+          "username"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "maxLength": 40,
+            "minLength": 4,
+            "type": "string"
+          },
+          "username": {
+            "maxLength": 15,
+            "minLength": 3,
+            "type": "string"
+          },
+          "email": {
+            "maxLength": 40,
+            "minLength": 0,
+            "type": "string"
+          },
+          "password": {
+            "maxLength": 20,
+            "minLength": 6,
+            "type": "string"
+          }
+        }
+      },
+      "ApiResponseJwtAuthenticationResponse": {
+        "type": "object",
+        "properties": {
+          "flag": {
+            "type": "boolean"
+          },
+          "data": {
+            "$ref": "#/components/schemas/JwtAuthenticationResponse"
+          },
+          "error": {
+            "$ref": "#/components/schemas/ApiError"
+          },
+          "hasError": {
+            "type": "boolean"
+          },
+          "hasData": {
+            "type": "boolean"
+          }
+        }
+      },
+      "JwtAuthenticationResponse": {
+        "type": "object",
+        "properties": {
+          "accessToken": {
+            "type": "string"
+          },
+          "refreshToken": {
+            "type": "string"
+          },
+          "tokenType": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "claims": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "LoginRequest": {
+        "required": [
+          "password",
+          "usernameOrEmail"
+        ],
+        "type": "object",
+        "properties": {
+          "usernameOrEmail": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      },
+      "MasterPagedRequest": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pagingSize": {
+            "type": "string",
+            "enum": [
+              "SIZE_10",
+              "SIZE_30",
+              "SIZE_50",
+              "SIZE_100",
+              "SIZE_200"
+            ]
+          }
+        }
+      },
+      "ContactSearchRequest": {
+        "type": "object",
+        "properties": {
+          "keyword": {
+            "type": "string"
+          },
+          "page": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pagingSize": {
+            "type": "string",
+            "enum": [
+              "SIZE_10",
+              "SIZE_30",
+              "SIZE_50",
+              "SIZE_100",
+              "SIZE_200"
+            ]
+          },
+          "sortBy": {
+            "type": "string",
+            "enum": [
+              "CONTACT_ID_ASC",
+              "CONTACT_ID_DESC",
+              "CONTACT_NAME_ASC",
+              "CONTACT_NAME_DESC"
+            ]
+          }
+        }
+      }
+    },
+    "responses": {
+      "badRequestStatus": {
+        "description": "Bad Request!",
+        "content": {
+          "application/json": {
+            "examples": {
+              "badRequest": {
+                "value": "400"
+              }
+            }
+          }
+        }
+      },
+      "unauthorizedStatus": {
+        "description": "Unauthorized!",
+        "content": {
+          "application/json": {
+            "examples": {
+              "Unauthorized": {
+                "value": "401"
+              }
+            }
+          }
+        }
+      },
+      "internalServerErrorStatus": {
+        "description": "Internal Server Error!",
+        "content": {
+          "application/json": {
+            "examples": {
+              "Internal Server Error": {
+                "value": "500"
+              }
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "Bearer Authentication": {
+        "type": "http",
+        "description": "Enter JWT token",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}

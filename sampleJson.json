@@ -1,0 +1,57 @@
+
+http://localhost:1007/api/master/document
+{
+    "flag": true,
+    "data": [
+        {
+            "id": 1,
+            "contentJson": "{\"type\":\"doc\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"BEFORE THE HON’BLE SPECIAL COURT – SPE/CBI-II/PMLA/ADDL. DISTRICT COURT IV AT ERNAKULAM\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"marks\":[{\"type\":\"bold\"}],\"text\":\"SC(PMLA). 05 of 2025\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"\\tComplainant\\t\\t: \\t\"},{\"type\":\"variable\",\"attrs\":{\"key\":\"complainant\",\"label\":\"Complainant\"}}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"                                    Vs.\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"     Accused\\t\\t        : \\t\"},{\"type\":\"variable\",\"attrs\":{\"key\":\"accused\",\"label\":\"Accused\"}}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"                                     Accused No.7 : Labeeb T. A)\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"marks\":[{\"type\":\"underline\"}],\"text\":\"ABSENT APPLICATION \"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Petitioners herein are \"},{\"type\":\"text\",\"marks\":[{\"type\":\"bold\"}],\"text\":\"Accused No.7 \"},{\"type\":\"text\",\"text\":\"in the above numbered case. Offence alleged is under section 44 and 45 of Prevention of Money Laundering Act. It is respectfully submitted that the accused is outstation, so he is unable to appear before this Hon’ble Court today. \"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"That the non-appearance of Accused is neither intentional nor deliberate but due to aforesaid reason. The circumstances being so, it is most humbly prayed that this Hon’ble Court may be pleased to condone the absence of the accused for the day, in the interest of Justice.\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Dated this the 12th day of January 2026\"}]},{\"type\":\"paragraph\"},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"                                                                                                                                                                                                                                                                  \"},{\"type\":\"variable\",\"attrs\":{\"key\":\"advocateName\",\"label\":\"Advocate Name\"}},{\"type\":\"text\",\"text\":\"                                  \"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"                                                                                                                                                                                                                                                 Counsel for the accused No.7\"}]},{\"type\":\"paragraph\"},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Presented On: 07-10-2025\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"BEFORE THE HON’BLE SPECIAL \"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"COURT – SPE/CBI-II/PMLA/ADDL. \"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"DISTRICT COURT IV AT ERNAKULAM\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"marks\":[{\"type\":\"bold\"}],\"text\":\"                                                                      SC(PMLA). 05 of 2025\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Complainant :\\tEnforcement Directorate\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\" Vs.\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Accused \\t: Muhammed Ali. V and others\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"\\t\\t (Accused No.7 : Labeeb T. A)\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"marks\":[{\"type\":\"bold\"}],\"text\":\"ABSENT APPLICATION\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"JEEJAN T \"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Advocate, \"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"2nd Floor, \"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Poothulli Building, \"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Kombara Junction, \"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Ernakulam-18 \"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"8891006933 \"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"                                                         \"}]}]}",
+            "contentJsonVariables": "[{\"key\":\"complainant\",\"label\":\"Complainant\",\"dataSource\":\"manual\",\"value\":\"Enforcement Directorate\"},{\"key\":\"accused\",\"label\":\"Accused\",\"dataSource\":\"manual\",\"value\":\"Muhammed Ali. V and others\"},{\"key\":\"sCPMLA\",\"label\":\"SC(PMLA)\",\"dataSource\":\"manual\",\"value\":\"\"},{\"key\":\"advocateName\",\"label\":\"Advocate Name\",\"dataSource\":\"manual\",\"value\":\"\"},{\"key\":\"presentedOn\",\"label\":\"Presented On\",\"dataSource\":\"manual\",\"value\":\"\"}]",
+            "documentType": "xyz",
+            "documentName": "VDI-Enforcement Directorate",
+            "managedBy": null,
+            "tenantId": 1,
+            "createdAt": "2026-09-21T21:27:05.992",
+            "updatedAt": "2026-09-21T21:27:05.992"
+        },
+        {
+            "id": 2,
+            "contentJson": "{\"type\":\"doc\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"I, \"},{\"type\":\"variable\",\"attrs\":{\"key\":\"clientName\",\"label\":\"Client name\"}},{\"type\":\"text\",\"text\":\", do hereby appoint the advocate to represent me in the matter of \"},{\"type\":\"variable\",\"attrs\":{\"key\":\"caseTitle\",\"label\":\"Case title\"}},{\"type\":\"text\",\"text\":\" before \"},{\"type\":\"variable\",\"attrs\":{\"key\":\"courtName\",\"label\":\"Court name\"}},{\"type\":\"text\",\"text\":\".\"}]}]}",
+            "contentJsonVariables": "[{\"key\":\"clientName\",\"label\":\"Client name\",\"dataSource\":\"client.firstName\",\"value\":\"testxyz\"},{\"key\":\"caseTitle\",\"label\":\"Case title\",\"dataSource\":\"case.caseTitle\",\"value\":\"Case title / Subject 1\"},{\"key\":\"courtName\",\"label\":\"Court name\",\"dataSource\":\"case.courtName\",\"value\":\"District Court, Thiruvananthapuram\"},{\"key\":\"testName\",\"label\":\"Test name\",\"dataSource\":\"case.courtName\",\"value\":\"Jithu\"}]",
+            "documentType": "xyz",
+            "documentName": "VDI-MasterTemplate2",
+            "managedBy": null,
+            "tenantId": 1,
+            "createdAt": "2026-09-21T21:27:05.992",
+            "updatedAt": "2026-09-21T21:27:05.992"
+        }
+    ],
+    "error": null,
+    "hasError": false,
+    "hasData": true
+}
+
+--------------------------
+
+http://localhost:1007/api/matter/5/document/4/doc
+{
+    "flag": true,
+    "data": {
+        "id": 4,
+        "matterId": 5,
+        "caseId": null,
+        "templateId": null,
+        "documentName": "Gdoc",
+        "documentType": "1",
+        "fileUrl": "https://docs.google.com/spreadsheets/d/12jmGvZPzV48yFR840pZtHS3in3S1Wx0CeHi6fTkbyb4/edit?gid=0#gid=0",
+        "contentJson": null,
+        "variables": [],
+        "resolvedContentJson": null,
+        "status": null,
+        "createdAt": "27/09/2026 00:54"
+    },
+    "error": null,
+    "hasError": false,
+    "hasData": true
+}
+

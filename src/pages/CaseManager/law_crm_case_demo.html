@@ -1,0 +1,321 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+.crm{font-family:var(--font-sans);color:var(--color-text-primary);padding:0 0 2rem}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;border-bottom:0.5px solid var(--color-border-tertiary);background:var(--color-background-primary)}
+.topbar-title{font-size:15px;font-weight:500}
+.topbar-sub{font-size:12px;color:var(--color-text-secondary);margin-top:2px}
+.steps-bar{display:flex;align-items:center;padding:16px 20px;gap:0;border-bottom:0.5px solid var(--color-border-tertiary);background:var(--color-background-secondary);overflow-x:auto}
+.step-item{display:flex;align-items:center;gap:6px;cursor:pointer;padding:0 10px 0 0;flex-shrink:0}
+.step-dot{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;border:0.5px solid var(--color-border-secondary);background:var(--color-background-primary);color:var(--color-text-secondary);transition:all .2s;flex-shrink:0}
+.step-dot.done{background:#E1F5EE;border-color:#0F6E56;color:#085041}
+.step-dot.active{background:#EEEDFE;border-color:#534AB7;color:#3C3489}
+.step-label{font-size:12px;color:var(--color-text-secondary);white-space:nowrap}
+.step-label.active{color:#3C3489;font-weight:500}
+.step-label.done{color:#085041}
+.step-sep{width:24px;height:1px;background:var(--color-border-tertiary);flex-shrink:0;margin:0 2px}
+.panel{padding:20px}
+.panel-title{font-size:16px;font-weight:500;margin-bottom:4px}
+.panel-sub{font-size:13px;color:var(--color-text-secondary);margin-bottom:20px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.form-row.trio{grid-template-columns:1fr 1fr 1fr}
+.form-row.solo{grid-template-columns:1fr}
+.field{display:flex;flex-direction:column;gap:5px}
+.field label{font-size:12px;color:var(--color-text-secondary);font-weight:500}
+.field input,.field select,.field textarea{font-size:13px;padding:8px 10px;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);background:var(--color-background-primary);color:var(--color-text-primary);width:100%}
+.field textarea{resize:none;height:72px}
+.badge{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:500;padding:3px 10px;border-radius:20px}
+.badge.purple{background:#EEEDFE;color:#3C3489}
+.badge.teal{background:#E1F5EE;color:#085041}
+.badge.amber{background:#FAEEDA;color:#633806}
+.badge.red{background:#FCEBEB;color:#791F1F}
+.badge.coral{background:#FAECE7;color:#712B13}
+.badge.gray{background:#F1EFE8;color:#444441}
+.card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:14px 16px;margin-bottom:10px}
+.card-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.card-title{font-size:13px;font-weight:500}
+.card-meta{font-size:12px;color:var(--color-text-secondary)}
+.section-label{font-size:11px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.05em;margin:16px 0 8px}
+.kv{display:flex;font-size:13px;padding:5px 0;border-bottom:0.5px solid var(--color-border-tertiary)}
+.kv:last-child{border-bottom:none}
+.kv-k{color:var(--color-text-secondary);width:160px;flex-shrink:0}
+.kv-v{font-weight:500}
+.task-row{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:0.5px solid var(--color-border-tertiary)}
+.task-row:last-child{border-bottom:none}
+.task-check{width:16px;height:16px;border-radius:4px;border:0.5px solid var(--color-border-secondary);margin-top:2px;flex-shrink:0;cursor:pointer}
+.task-check.done{background:#E1F5EE;border-color:#0F6E56}
+.task-info{flex:1}
+.task-name{font-size:13px;font-weight:500}
+.task-due{font-size:11px;color:var(--color-text-secondary);margin-top:2px}
+.sub-task{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--color-text-secondary);padding:3px 0 0 0}
+.sub-dot{width:5px;height:5px;border-radius:50%;background:var(--color-border-secondary);flex-shrink:0}
+.docket-row{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:0.5px solid var(--color-border-tertiary)}
+.docket-row:last-child{border-bottom:none}
+.docket-no{font-size:11px;font-weight:500;color:var(--color-text-secondary);width:36px;flex-shrink:0;padding-top:2px}
+.docket-info{flex:1}
+.docket-title{font-size:13px;font-weight:500}
+.docket-meta{font-size:11px;color:var(--color-text-secondary);margin-top:2px}
+.btns{display:flex;justify-content:flex-end;gap:8px;margin-top:20px}
+.btn{font-size:13px;padding:8px 18px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:transparent;color:var(--color-text-primary);cursor:pointer}
+.btn:hover{background:var(--color-background-secondary)}
+.btn.primary{background:#EEEDFE;border-color:#534AB7;color:#3C3489;font-weight:500}
+.btn.primary:hover{background:#CECBF6}
+.progress-bar{height:3px;background:var(--color-border-tertiary);border-radius:2px;margin-bottom:20px}
+.progress-fill{height:3px;background:#534AB7;border-radius:2px;transition:width .4s}
+.summary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+.metric{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:12px;text-align:center}
+.metric-n{font-size:22px;font-weight:500}
+.metric-l{font-size:12px;color:var(--color-text-secondary);margin-top:2px}
+.timeline{padding-left:18px;border-left:1.5px solid var(--color-border-secondary);margin-top:8px}
+.tl-item{position:relative;padding:0 0 14px 16px}
+.tl-dot{position:absolute;left:-8px;top:4px;width:8px;height:8px;border-radius:50%;background:#534AB7;border:2px solid var(--color-background-primary)}
+.tl-dot.teal{background:#0F6E56}
+.tl-dot.amber{background:#BA7517}
+.tl-dot.red{background:#A32D2D}
+.tl-date{font-size:11px;color:var(--color-text-secondary)}
+.tl-text{font-size:13px;font-weight:500}
+.alert{background:#EEEDFE;border:0.5px solid #AFA9EC;border-radius:var(--border-radius-md);padding:10px 14px;font-size:13px;color:#3C3489;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+</style>
+
+<div class="crm">
+<h2 class="sr-only">Law CRM step-by-step demo: creating a case, docket, and tasks for a High Court matter</h2>
+
+<div class="topbar">
+  <div>
+    <div class="topbar-title"><i class="ti ti-building-bank" style="font-size:16px;vertical-align:-2px;margin-right:6px" aria-hidden="true"></i>LexCRM — Law Case Management</div>
+    <div class="topbar-sub">High Court / Supreme Court case workflow</div>
+  </div>
+  <div style="display:flex;gap:6px;align-items:center">
+    <span class="badge purple"><i class="ti ti-user" style="font-size:11px" aria-hidden="true"></i> Adv. R. Sharma</span>
+    <span class="badge gray">Demo mode</span>
+  </div>
+</div>
+
+<div class="steps-bar" id="steps-bar"></div>
+
+<div class="panel">
+  <div class="progress-bar"><div class="progress-fill" id="prog-fill" style="width:16%"></div></div>
+  <div id="panel-content"></div>
+</div>
+</div>
+
+<script>
+const STEPS=[
+  {id:'client',label:'Client intake'},
+  {id:'case',label:'Create case'},
+  {id:'docket',label:'Open docket'},
+  {id:'entries',label:'Docket entries'},
+  {id:'tasks',label:'Tasks & deadlines'},
+  {id:'summary',label:'Case dashboard'},
+];
+
+let current=0;
+
+const PANELS={
+client:`
+<div class="panel-title"><i class="ti ti-user-plus" style="font-size:16px;vertical-align:-2px;margin-right:8px;color:#534AB7" aria-hidden="true"></i>Step 1 — Client intake</div>
+<div class="panel-sub">Register the client before opening a case. All future cases link to this record.</div>
+<div class="alert"><i class="ti ti-info-circle" style="font-size:16px;flex-shrink:0" aria-hidden="true"></i>New client detected. Fill in details to create a client record in the CRM.</div>
+<div class="form-row">
+  <div class="field"><label>Full name / entity name</label><input value="Rajesh Kumar Mehta" type="text"/></div>
+  <div class="field"><label>Client type</label><select><option>Individual</option><option>Company</option><option>Trust</option></select></div>
+</div>
+<div class="form-row trio">
+  <div class="field"><label>Phone</label><input value="+91 98201 55432" type="text"/></div>
+  <div class="field"><label>Email</label><input value="rk.mehta@gmail.com" type="text"/></div>
+  <div class="field"><label>PAN / ID no.</label><input value="ABCPK1234R" type="text"/></div>
+</div>
+<div class="form-row">
+  <div class="field"><label>Address</label><input value="12, Nehru Nagar, Mumbai – 400021" type="text"/></div>
+  <div class="field"><label>Referred by</label><input value="Self / walk-in" type="text"/></div>
+</div>
+<div class="form-row solo">
+  <div class="field"><label>Initial matter / brief</label><textarea>Dispute over property title — flat No. 4B, Andheri West. Opposing party is M/s Prestige Builders Pvt Ltd. Seeks injunction.</textarea></div>
+</div>
+<div class="section-label">Conflict check</div>
+<div class="card" style="background:var(--color-background-success);border-color:var(--color-border-success)">
+  <span style="font-size:13px;color:var(--color-text-success)"><i class="ti ti-check" style="font-size:15px;vertical-align:-2px;margin-right:6px" aria-hidden="true"></i>No conflict found. This client and opposing party are not linked to any existing open case.</span>
+</div>
+`,
+
+case:`
+<div class="panel-title"><i class="ti ti-briefcase" style="font-size:16px;vertical-align:-2px;margin-right:8px;color:#534AB7" aria-hidden="true"></i>Step 2 — Create the case</div>
+<div class="panel-sub">Define the legal matter, court, and assign the advocate team.</div>
+<div class="form-row">
+  <div class="field"><label>Case title</label><input value="Rajesh Kumar Mehta vs M/s Prestige Builders Pvt Ltd" type="text"/></div>
+  <div class="field"><label>Case type</label><select><option>Civil suit</option><option>Writ petition</option><option>Criminal</option><option>Arbitration</option></select></div>
+</div>
+<div class="form-row trio">
+  <div class="field"><label>Court</label><select><option>Bombay High Court</option><option>Supreme Court of India</option><option>Delhi High Court</option></select></div>
+  <div class="field"><label>Bench / division</label><select><option>Commercial division</option><option>Original side</option><option>Appellate side</option></select></div>
+  <div class="field"><label>Filing date</label><input type="date" value="2025-05-19"/></div>
+</div>
+<div class="form-row">
+  <div class="field"><label>Relief sought</label><select><option>Permanent injunction</option><option>Declaration of title</option><option>Damages</option><option>Specific performance</option></select></div>
+  <div class="field"><label>Urgency / priority</label><select><option>High — injunction needed</option><option>Normal</option><option>Low</option></select></div>
+</div>
+<div class="form-row">
+  <div class="field"><label>Lead advocate</label><input value="Adv. Rohit Sharma (Sr. Counsel)" type="text"/></div>
+  <div class="field"><label>Junior / associate</label><input value="Adv. Priya Nair" type="text"/></div>
+</div>
+<div class="form-row solo">
+  <div class="field"><label>Case summary / facts</label><textarea>Client purchased flat 4B in 2019. Builder failed to register title deed. Client now faces eviction notice from a third party claiming title via forged documents. Seeks injunction restraining dispossession pending title inquiry.</textarea></div>
+</div>
+<div class="section-label">Parties</div>
+<div class="form-row">
+  <div class="field"><label>Petitioner / plaintiff</label><input value="Rajesh Kumar Mehta (S/o Suresh Mehta)" type="text"/></div>
+  <div class="field"><label>Respondent / defendant</label><input value="M/s Prestige Builders Pvt Ltd &amp; 2 others" type="text"/></div>
+</div>
+`,
+
+docket:`
+<div class="panel-title"><i class="ti ti-clipboard-list" style="font-size:16px;vertical-align:-2px;margin-right:8px;color:#534AB7" aria-hidden="true"></i>Step 3 — Open a docket</div>
+<div class="panel-sub">A docket is the official court register for this matter. One case can have multiple dockets (e.g. HC + SC).</div>
+<div class="form-row trio">
+  <div class="field"><label>Docket / case no.</label><input value="(Pending — to be assigned by court)" type="text"/></div>
+  <div class="field"><label>Court registration date</label><input type="date" value="2025-05-20"/></div>
+  <div class="field"><label>Filing method</label><select><option>e-Filing (High Court portal)</option><option>Physical filing</option></select></div>
+</div>
+<div class="form-row">
+  <div class="field"><label>Judge / bench assigned</label><input value="Hon'ble Justice A.K. Menon (Commercial Bench)" type="text"/></div>
+  <div class="field"><label>Opposing counsel</label><input value="Adv. Sameer Doshi, Doshi &amp; Associates" type="text"/></div>
+</div>
+<div class="form-row trio">
+  <div class="field"><label>Stage at opening</label><select><option>Pleadings</option><option>Pre-trial</option><option>Trial</option><option>Judgment</option></select></div>
+  <div class="field"><label>Next date (court assigns)</label><input type="date" value="2025-06-10"/></div>
+  <div class="field"><label>Hearing type</label><select><option>Admission hearing</option><option>Motion hearing</option><option>Final arguments</option></select></div>
+</div>
+<div class="section-label">Documents filed at opening</div>
+<div class="card">
+  <div style="display:flex;flex-direction:column;gap:6px">
+    ${['Plaint / Writ petition (signed)','Vakalatnama (Power of attorney)','List of dates and events','Index of documents','Court fees receipt'].map((d,i)=>`<div style="display:flex;align-items:center;gap:8px;font-size:13px"><i class="ti ti-file-check" style="font-size:15px;color:#0F6E56" aria-hidden="true"></i>${d}<span class="badge teal" style="margin-left:auto">Filed</span></div>`).join('')}
+  </div>
+</div>
+`,
+
+entries:`
+<div class="panel-title"><i class="ti ti-notes" style="font-size:16px;vertical-align:-2px;margin-right:8px;color:#534AB7" aria-hidden="true"></i>Step 4 — Docket entries</div>
+<div class="panel-sub">Every court event, filing, and order is recorded as a docket entry — the official chronicle of the case.</div>
+<div class="section-label">Add new entry</div>
+<div class="form-row trio">
+  <div class="field"><label>Entry type</label><select><option>Filing</option><option>Court order</option><option>Hearing minutes</option><option>Notice</option><option>Judgment</option></select></div>
+  <div class="field"><label>Date</label><input type="date" value="2025-05-20"/></div>
+  <div class="field"><label>Entered by</label><input value="Adv. Priya Nair" type="text"/></div>
+</div>
+<div class="form-row solo">
+  <div class="field"><label>Description</label><textarea placeholder="e.g. Court issued notice to respondents returnable on 10-Jun-2025. Injunction application admitted for hearing."></textarea></div>
+</div>
+<div class="section-label">Existing docket entries</div>
+<div class="card">
+${[
+  {no:'#001',type:'Filing',badge:'purple',date:'19 May 2025',title:'Plaint + injunction application filed',meta:'Filed via e-portal. SLP No. awaited. Court fee ₹5,200 paid.'},
+  {no:'#002',type:'Order',badge:'teal',date:'20 May 2025',title:'Court admits case & issues notice to respondents',meta:'Order by Hon\'ble Justice A.K. Menon. Next date: 10-Jun-2025 for respondent\'s reply.'},
+  {no:'#003',type:'Notice',badge:'amber',date:'21 May 2025',title:'Bailiff notice dispatched to M/s Prestige Builders',meta:'Notice sent by registered post + e-service. Ack. pending.'},
+].map(e=>`
+<div class="docket-row">
+  <div class="docket-no">${e.no}</div>
+  <div class="docket-info">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:3px">
+      <span class="docket-title">${e.title}</span>
+      <span class="badge ${e.badge}" style="margin-left:auto;flex-shrink:0">${e.type}</span>
+    </div>
+    <div class="docket-meta"><i class="ti ti-calendar" style="font-size:11px;vertical-align:-1px;margin-right:3px" aria-hidden="true"></i>${e.date} &nbsp;·&nbsp; ${e.meta}</div>
+  </div>
+</div>`).join('')}
+</div>
+<div class="alert" style="margin-top:12px"><i class="ti ti-bell" style="font-size:16px;flex-shrink:0" aria-hidden="true"></i>Reminder auto-set: 3 days before next date (07-Jun-2025) for hearing prep.</div>
+`,
+
+tasks:`
+<div class="panel-title"><i class="ti ti-checklist" style="font-size:16px;vertical-align:-2px;margin-right:8px;color:#534AB7" aria-hidden="true"></i>Step 5 — Tasks & deadlines</div>
+<div class="panel-sub">Tasks are auto-suggested based on case type and court stage. Assign, set due dates, and track subtasks.</div>
+<div class="section-label">Active tasks — case: Mehta vs Prestige Builders</div>
+<div class="card">
+${[
+  {name:'Prepare injunction application bundle',due:'Due 24 May 2025',priority:'red',pl:'Urgent',done:true,subs:['Draft affidavit in support','Attach sale deed + payment receipts','Prepare index of annexures','Get notarized copies']},
+  {name:'Serve notice on all respondents',due:'Due 27 May 2025',priority:'amber',pl:'High',done:false,subs:['Confirm bailiff service','Send registered post copy','Confirm e-service on HC portal']},
+  {name:'Draft written statement anticipation note',due:'Due 03 Jun 2025',priority:'gray',pl:'Normal',done:false,subs:['Research opposing title claim','Identify key precedents','Draft rebuttal outline']},
+  {name:'Hearing preparation — 10 Jun 2025',due:'Due 08 Jun 2025',priority:'purple',pl:'Upcoming',done:false,subs:['Prepare arguments outline','Brief senior counsel','Compile case law bundle','Verify client attendance']},
+].map(t=>`
+<div class="task-row">
+  <div class="task-check ${t.done?'done':''}" aria-label="${t.done?'Completed':'Pending'}"></div>
+  <div class="task-info">
+    <div style="display:flex;align-items:center;gap:8px">
+      <span class="task-name" style="${t.done?'text-decoration:line-through;color:var(--color-text-secondary)':''}">${t.name}</span>
+      <span class="badge ${t.priority}" style="margin-left:auto;flex-shrink:0">${t.pl}</span>
+    </div>
+    <div class="task-due"><i class="ti ti-clock" style="font-size:11px;vertical-align:-1px;margin-right:3px" aria-hidden="true"></i>${t.due}</div>
+    <div style="margin-top:6px;display:flex;flex-direction:column;gap:2px">
+      ${t.subs.map(s=>`<div class="sub-task"><div class="sub-dot"></div>${s}</div>`).join('')}
+    </div>
+  </div>
+</div>`).join('')}
+</div>
+`,
+
+summary:`
+<div class="panel-title"><i class="ti ti-layout-dashboard" style="font-size:16px;vertical-align:-2px;margin-right:8px;color:#534AB7" aria-hidden="true"></i>Step 6 — Case dashboard</div>
+<div class="panel-sub">Your case is live in the CRM. Here's the full snapshot for Mehta vs Prestige Builders.</div>
+<div class="summary-grid">
+  <div class="metric"><div class="metric-n" style="color:#534AB7">HC-2025</div><div class="metric-l">Case ID</div></div>
+  <div class="metric"><div class="metric-n" style="color:#0F6E56">4</div><div class="metric-l">Tasks active</div></div>
+  <div class="metric"><div class="metric-n" style="color:#BA7517">10 Jun</div><div class="metric-l">Next hearing</div></div>
+</div>
+<div class="card">
+  <div class="card-head"><span class="card-title"><i class="ti ti-id-badge" style="font-size:14px;vertical-align:-2px;margin-right:6px" aria-hidden="true"></i>Case record</span><span class="badge purple">Civil suit — Injunction</span></div>
+  <div class="kv"><span class="kv-k">Client</span><span class="kv-v">Rajesh Kumar Mehta</span></div>
+  <div class="kv"><span class="kv-k">Opponent</span><span class="kv-v">M/s Prestige Builders Pvt Ltd &amp; 2 others</span></div>
+  <div class="kv"><span class="kv-k">Court</span><span class="kv-v">Bombay High Court — Commercial Bench</span></div>
+  <div class="kv"><span class="kv-k">Judge</span><span class="kv-v">Hon'ble Justice A.K. Menon</span></div>
+  <div class="kv"><span class="kv-k">Lead counsel</span><span class="kv-v">Adv. Rohit Sharma (Sr.) + Adv. Priya Nair</span></div>
+  <div class="kv"><span class="kv-k">Filed on</span><span class="kv-v">19 May 2025</span></div>
+  <div class="kv"><span class="kv-k">Stage</span><span class="kv-v">Pleadings — Admission stage</span></div>
+</div>
+<div class="section-label">Case timeline</div>
+<div class="card">
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">19 May 2025</div><div class="tl-text">Client intake &amp; conflict check completed</div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">19 May 2025</div><div class="tl-text">Case created — civil suit, injunction relief</div></div>
+    <div class="tl-item"><div class="tl-dot teal"></div><div class="tl-date">20 May 2025</div><div class="tl-text">Docket opened — e-Filed on HC portal</div></div>
+    <div class="tl-item"><div class="tl-dot teal"></div><div class="tl-date">20 May 2025</div><div class="tl-text">Court admits case, notice issued to respondents</div></div>
+    <div class="tl-item"><div class="tl-dot amber"></div><div class="tl-date">21 May 2025</div><div class="tl-text">Bailiff notice dispatched — ack. pending</div></div>
+    <div class="tl-item"><div class="tl-dot amber"></div><div class="tl-date">10 Jun 2025</div><div class="tl-text" style="color:var(--color-text-secondary);font-style:italic">Next hearing — respondents' reply expected</div></div>
+  </div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+  <button class="btn primary" onclick="sendPrompt('What tasks should I prepare before the 10 June 2025 hearing for an injunction matter in Bombay High Court?')">Prepare for next hearing ↗</button>
+  <button class="btn" onclick="sendPrompt('What documents does a commercial bench injunction case in Bombay High Court typically require at the first hearing?')">What documents are needed? ↗</button>
+</div>
+`
+};
+
+function renderSteps(){
+  const bar=document.getElementById('steps-bar');
+  bar.innerHTML=STEPS.map((s,i)=>`
+    <div class="step-item" onclick="goTo(${i})">
+      <div class="step-dot ${i<current?'done':i===current?'active':''}">${i<current?'<i class="ti ti-check" style="font-size:12px" aria-hidden="true"></i>':i+1}</div>
+      <span class="step-label ${i<current?'done':i===current?'active':''}">${s.label}</span>
+    </div>
+    ${i<STEPS.length-1?'<div class="step-sep"></div>':''}
+  `).join('');
+}
+
+function renderPanel(){
+  const key=STEPS[current].id;
+  const pct=Math.round(((current+1)/STEPS.length)*100);
+  document.getElementById('prog-fill').style.width=pct+'%';
+  const btns=current===STEPS.length-1?'':`
+    <div class="btns">
+      ${current>0?'<button class="btn" onclick="prev()"><i class="ti ti-arrow-left" style="font-size:13px;vertical-align:-2px;margin-right:4px" aria-hidden="true"></i>Back</button>':''}
+      <button class="btn primary" onclick="next()">${current===STEPS.length-2?'Finish & view dashboard':'Save & continue'} <i class="ti ti-arrow-right" style="font-size:13px;vertical-align:-2px;margin-left:4px" aria-hidden="true"></i></button>
+    </div>`;
+  document.getElementById('panel-content').innerHTML=PANELS[key]+btns;
+}
+
+function goTo(i){current=i;renderSteps();renderPanel()}
+function next(){if(current<STEPS.length-1){current++;renderSteps();renderPanel()}}
+function prev(){if(current>0){current--;renderSteps();renderPanel()}}
+
+renderSteps();
+renderPanel();
+</script>
